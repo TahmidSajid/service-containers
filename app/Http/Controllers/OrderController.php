@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classes\DiscountPrice;
 use Illuminate\Http\Request;
 use App\Classes\PaymentGateway;
+use App\Interfaces\PaymentGatewayContract;
 
 class OrderController extends Controller
 {
@@ -13,7 +14,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(DiscountPrice $discount_price,PaymentGateway $payment_gateway)
+    public function index(DiscountPrice $discount_price,PaymentGatewayContract $payment_gateway)
     {
         $discount_price->apply();
 
